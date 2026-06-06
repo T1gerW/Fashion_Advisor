@@ -23,6 +23,10 @@ of items on the avatar.
 
 - **Visualization direction:** generated 3D avatar (NOT AI image-gen, NOT full
   cloth simulation). Rotation/viewing of a posed avatar is the target.
+- **Avatar generation: parametric (measurements form).** User enters height,
+  weight, chest/waist/hip, etc.; a body mesh is generated from those values.
+  No photos in v1 (privacy-friendly, simpler). Photo-based realism is a possible
+  v2, not now.
 - Frontend: _undecided (leaning React)_
 - 3D: _undecided (leaning Three.js / react-three-fiber)_
 - Backend & recommendation logic: _undecided_
@@ -52,15 +56,17 @@ of items on the avatar.
 
 > Keep this current. Update it at the END of every session before stopping.
 
-**Current state:** Repo scaffolding only. README + this file created.
+**Current state:** Repo scaffolding. README + this file created. Avatar approach
+decided: parametric / measurements-based.
 
 **Next steps:**
-1. Lock the frontend + 3D library choice.
-2. Scaffold a runnable app skeleton (blank page that loads).
-3. Get a basic 3D scene rendering (a placeholder shape that rotates).
-4. Then: replace placeholder with a basic avatar.
+1. Scaffold a runnable React app skeleton (blank page that loads).
+2. Add react-three-fiber and render a placeholder shape (cube) that rotates —
+   prove the 3D pipeline works.
+3. Replace the placeholder with a basic body mesh.
+4. Add a measurements form that adjusts the body mesh.
 
 **Open questions:**
-- How is the avatar generated — measurements form, photo-based, or a third-party
-  avatar SDK? This is the biggest unknown and shapes everything.
+- Which parametric body model/library to use for the mesh (e.g. a MakeHuman-derived
+  model, SMPL, or a simpler scalable mesh)?
 - Where do fashion items / 3D garment assets come from?

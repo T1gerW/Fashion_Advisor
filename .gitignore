@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+
+# Local env files
+*.local
+
+# Editor / OS
+.DS_Store
+
+# SMPL model + everything derived from it (licensed — never commit)
+models/
+public/smpl/
+SMPL_python_v.1.1.0/
+*.pkl

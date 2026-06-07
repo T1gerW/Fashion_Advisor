@@ -1,0 +1,3 @@
+numpy>=1.23
+scipy>=1.9
+# chumpy   # only needed if you downloaded the older SMPL v1.0.0 .pkl

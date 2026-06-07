@@ -1,0 +1,119 @@
+/* Reset margins and let the page fill the viewport, so the layout (and the 3D
+   canvas inside it) has a full-size container to work with. */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #1a1a1a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* App layout: measurements panel on the left, 3D canvas filling the rest. */
+.app {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-wrap {
+  flex: 1;
+  min-width: 0; /* lets the canvas shrink instead of overflowing the panel */
+  position: relative;
+}
+
+/* Measurements panel */
+.panel {
+  width: 280px;
+  flex-shrink: 0;
+  height: 100%;
+  padding: 24px 20px;
+  overflow-y: auto;
+  background: #20242b;
+  color: #e8eaed;
+  border-right: 1px solid #2c313a;
+}
+
+.panel h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.panel .hint {
+  font-size: 12px;
+  color: #9aa3ad;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.field label {
+  font-size: 13px;
+  color: #c2c8cf;
+}
+
+.field input {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #fff;
+  background: #2c313a;
+  border: 1px solid #3a414c;
+  border-radius: 6px;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #4b7bec;
+}
+
+.generate-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: #4b7bec;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.generate-btn:hover {
+  background: #3867d6;
+}
+
+/* Auto-rotation play/pause toggle, overlaid on the 3D view. */
+.rotate-toggle {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #e8eaed;
+  background: rgba(32, 36, 43, 0.85);
+  border: 1px solid #3a414c;
+  border-radius: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.rotate-toggle:hover {
+  background: rgba(44, 49, 58, 0.95);
+}
